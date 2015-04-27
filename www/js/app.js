@@ -30,9 +30,6 @@ angular.module('app', ['ionic'])
     .state('home', {
       url: "/home",
       templateUrl: "templates/home.html",
-      controller: function(){
-        initialize();
-      }
 
     })
     .state('joining', {
@@ -51,6 +48,13 @@ angular.module('app', ['ionic'])
     })
 
 }).controller('MainCtrl', function($scope, $state, $ionicHistory, $ionicPopover){
+
+  $scope.findMe = function(){
+    $state.go('home').then(function(){
+       initialize();
+    });
+    
+  }
 
   $scope.backToMain = function(){
     $ionicHistory.nextViewOptions({
