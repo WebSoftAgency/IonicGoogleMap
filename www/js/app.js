@@ -26,10 +26,14 @@ angular.module('app', ['ionic'])
       url: "/tab",
       abstract: true,
       templateUrl: "templates/tabs.html"
+
     })
     .state('home', {
       url: "/home",
       templateUrl: "templates/home.html",
+      controller: function(){
+        initialize();
+      }
 
     })
     .state('joining', {
